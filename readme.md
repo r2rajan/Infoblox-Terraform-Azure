@@ -1,7 +1,6 @@
 ## Terraforming Infoblox in Azure - Infrastructure as code  
 
-While working on automating the IPAM deployment in azure i came across this blog post by Infoblox engineer [ Jason Radebaugh's Blog ] 
-(https://blogs.infoblox.com/community/take-your-infrastructure-as-code-to-the-next-level-with-infoblox-and-terraform/)
+While working on automating the IPAM deployment in azure i came across this blog post by Infoblox engineer [Jason Radebaugh's Blog](https://blogs.infoblox.com/community/take-your-infrastructure-as-code-to-the-next-level-with-infoblox-and-terraform/)
 
 There is a terraform manifest at the end of the blog which basically sets up the Infoblox IPAM with a fully functioning Azure environment including resource groups, virtual networks, security groups, storage accounts and vnios instance. 
 
