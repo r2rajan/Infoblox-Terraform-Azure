@@ -40,6 +40,9 @@ A snippet of os_profile should look like this
         custom_data    = base64encode("remote_console_enabled: y\ndefault_admin_password: Infoblox_1\ntemp_license: dns dhcp grid")
   }
 ```
+
+The *admin_username* and *admin_password* identifiers have no meaning but terraform would fail basic check since they are required identifiers for *os_profile* block
+
 Once the deployment is complete, verify the serial has posted messages related to variables that were passed to cloud-init script. An example output is below
 
 
