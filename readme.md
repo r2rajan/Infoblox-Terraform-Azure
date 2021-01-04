@@ -42,8 +42,9 @@ A snippet of os_profile should look like this
 
 The *admin_username* and *admin_password* identifiers have no meaning but terraform would fail basic check since they are required identifiers for *os_profile* block
 
-Once the deployment is complete, verify the serial has posted messages related to variables that were passed to cloud-init script. An example output is below
+Once the deployment is complete, verify the serial console has posted messages related to variables that were passed to cloud-init script. An example screenshot of serial console is below
 
+![OUTPUT](https://github.com/r2rajan/Infoblox-Terraform-Azure/blob/main/output.jpg)
 
 ## Disclaimer
 I have hardcoded the credential in the  terraform configuration and it's a bad practice. A good security practice is to store the usernames and secrets/credentials in azure key vault and accessing the secret through a keyvault data resource. 
