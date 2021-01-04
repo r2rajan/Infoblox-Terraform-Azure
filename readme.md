@@ -20,9 +20,9 @@ While reviewing the code, it was clear that the admin username and password is n
 
 In reviewing multiple cloud init scripts used by Infoblox for deploying vnios, i found the following variables needs to be passed to cloud init script. 
 
-   > remote_console_enabled - Enables console remote access  
-   > default_admin_password - Enables CLI access to vnios instance
-   > temp_license           - Enables temporary license for grid, dns and dhcp
+   >- remote_console_enabled - Enables console remote access  
+   >- default_admin_password - Enables CLI access to vnios instance
+   >- temp_license           - Enables temporary license for grid, dns and dhcp
 
 In Azure, a variable or custom data can be passed to cloud-init script using the *custom_data* block. A *custom_data* block can be used to pass user data to a virtual machine instance. *custom_data* block is similar to user_data block used by terraform aws provider. Terraform will base64 encode this value but it is a good practice base64encode in terraform as a best practice. In this specific case, Infoblox vnios marketplace image is based on linux kernel and hence he *custom_data* block to pass the variables and values to cloud-init script. *custom_data* block is configured inside the *os_profile* block  in *azurerm_virtual_machine* resource type. 
 
@@ -44,4 +44,4 @@ Once the deployment is complete, verify the serial has posted messages related t
 
 
 ## Disclaimer
-I have hardcoded the credential in the  terraform configuration and it's a bad practice. A good security practice is to store the usernames and secrets/credentials in azure key vault and pulling the secret through a keyvault data resource. 
+I have hardcoded the credential in the  terraform configuration and it's a bad practice. A good security practice is to store the usernames and secrets/credentials in azure key vault and accessing the secret through a keyvault data resource. 
